@@ -1,0 +1,6 @@
+.dropdown-menu {
+  transition: 300ms;
+}
+svg.rotate-90 {
+  transform: rotate(90deg);
+}
