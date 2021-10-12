@@ -35,7 +35,7 @@ function PasswordReset() {
                         history.push("/login")
                     })
                     .catch(function (error) {
-                        console.log(error);
+                        // console.log(error);
                         alert(error.response.data.msg)
                     });
             }
@@ -49,10 +49,10 @@ function PasswordReset() {
     useEffect(() => {
         axios.post(`${process.env.REACT_APP_API_DOMAIN}/student/checkString/${username}/${randString}`)
             .then(function (response) {
-                console.log(response.data.msg)
+                // console.log(response.data.msg)
             })
             .catch(function (error) {
-                console.log(error)
+                // console.log(error)
                 history.push("/")
             });
     }, [])

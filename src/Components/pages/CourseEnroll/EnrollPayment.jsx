@@ -3,8 +3,10 @@ import { useParams, useHistory, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { useFormik } from 'formik'
+import LoadingScreen from '../LoadingScreen';
 
 function EnrollPayment() {
+    const [sectionLoading, setSectionLoading] = useState(false)
     const [Course, setCourse] = useState([])
     const { courseId } = useParams()
     const UMCState = useSelector(state => state)
@@ -21,33 +23,45 @@ function EnrollPayment() {
         },
 
         onSubmit: values => {
-            axios.post(`${process.env.REACT_APP_API_DOMAIN}/order/create/`, {
-                ...values,
-                course: courseId,
-                student: UMCState.auth.userId
-            }, {
-                headers: {
-                    authorization: "Bearer " + localStorage.getItem("token")
-                }
-            })
-                .then(function (response) {
-                    alert("Your order has been placed successfully. Your order will approve withing 24 Hours.")
+            if (values.payment_method && values.sender_number &&
+                values.transaction_id && values.receiver_number &&
+                values.paid_ammount && values.reference) {
+                setSectionLoading(true)
+                axios.post(`${process.env.REACT_APP_API_DOMAIN}/order/create/`, {
+                    ...values,
+                    course: courseId,
+                    student: UMCState.auth.userId
+                }, {
+                    headers: {
+                        authorization: "Bearer " + localStorage.getItem("token")
+                    }
                 })
-                .catch(function (error) {
-                    console.log(error);
-                    alert(error.response.data.msg)
-                });
+                    .then(function (response) {
+                        setSectionLoading(false)
+                        alert("Your order has been placed successfully. Your order will approve withing 24 Hours.")
+                    })
+                    .catch(function (error) {
+                        setSectionLoading(false)
+                        // console.log(error);
+                        alert(error.response.data.msg)
+                    });
+            } else {
+                alert("Please Fill Up All Field")
+            }
         },
 
     });
 
     const grabCourse = () => {
+        setSectionLoading(true)
         axios.get(`${process.env.REACT_APP_API_DOMAIN}/course/view/${courseId}`)
             .then(response => {
                 setCourse(response.data.result)
+                setSectionLoading(false)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
+                setSectionLoading(false)
             })
     }
 
@@ -97,6 +111,7 @@ function EnrollPayment() {
                             <div className="mt-4">
                                 <label className=" block text-sm text-white" htmlFor="cus_email">Payment Method *</label>
                                 <select className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="payment_method" required aria-label="Payment Method" onChange={formik.handleChange} value={formik.values.payment_method}>
+                                    <option values="">Select Payment Method</option>
                                     <option>bkash</option>
                                     <option>rocket</option>
                                     <option>nogod</option>
@@ -114,6 +129,7 @@ function EnrollPayment() {
                             <div className="mt-4">
                                 <label className=" block text-sm text-white" htmlFor="cus_email">Receiver Number *</label>
                                 <select className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="receiver_number" required aria-label="Number You Sent Money" onChange={formik.handleChange} value={formik.values.receiver_number}>
+                                    <option value="">Select Receiver Number</option>
                                     <option>01780974765</option>
                                     <option>01766555940</option>
                                     <option>01734258740</option>
