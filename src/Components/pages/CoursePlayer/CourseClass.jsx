@@ -110,12 +110,12 @@ function CourseClass() {
                                             )}
                                         </ul>
                                     </div>
-                                    <div className="my-2">
+                                    {/* <div className="my-2">
                                         <p className="text-lg font-bold mb-2 text-white">Exam</p>
                                         <ul className="px-0">
                                             <a key={Math.random()} href="#" target="_blank" className="hover:text-red-800 hover:font-bold"><li className="hover:bg-white hover:text-black transition-all duration-150 border list-none  rounded-sm px-3 py-3 mb-2 text-white">Exam</li></a>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div >
                         </div >

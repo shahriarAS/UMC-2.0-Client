@@ -82,7 +82,7 @@ function CourseView() {
                             </div>
                         </div>
                         <div className="lg:w-1/2 w-full lg:h-auto h-64 lg:mt-8">
-                            <iframe className="w-full h-2/3" src={`https://www.youtube.com/embed/${Course.trailer}?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe className="w-full h-72" src={`https://www.youtube.com/embed/${Course.trailer}?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </div>
                         {/* <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400" /> */}
                     </div>
