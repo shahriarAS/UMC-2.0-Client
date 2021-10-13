@@ -63,7 +63,7 @@ function CourseClass() {
                 <div className="bgNeed min-h-screen h-full">
                     <h1 className="font-bold text-xl py-2 border-b text-center text-white">{Course.title}</h1>
                     <div className="flex">
-                        <div className={`${sidebarOpen ? "w-60" : "w-0"} whitespace-nowrap md:w-60 z-50 md:static overflow-hidden transition-all duration-300 ${sidebarOpen ? "p-4" : "p-0"} md:p-4 h-full absolute`}>
+                        <div className={`${sidebarOpen ? "w-60" : "w-0"} bg-gray-800 whitespace-nowrap md:w-60 z-50 md:static overflow-hidden transition-all duration-300 ${sidebarOpen ? "p-4" : "p-0"} md:p-4 h-full absolute`}>
                             <h2 className="text-xl mb-4 font-bold text-center text-white">Class Menu</h2>
                             <ul className="text-white">
                                 {
@@ -96,7 +96,7 @@ function CourseClass() {
                             <div className="w-full min-h-screen flex flex-col md:flex-row">
                                 <div className="md:w-2/3 w-full mt-2 md:p-4 h-full ">
                                     <EmbdedPlayer classTitle={ClassData.title ? ClassData.title : "Class Title Here"} videoLink={ClassData.videoLink} />
-                                    <div className="w-full mt-2 mb-4 whitespace-normal">
+                                    <div className="w-full mt-2 mb-4 p-4 whitespace-normal">
                                         {ReactHtmlParser(ClassData.classCaption)}
                                     </div >
                                 </div >
