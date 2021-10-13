@@ -31,24 +31,30 @@ function SignUpPage() {
         },
 
         onSubmit: values => {
-            if (values.password === values.confirmPassword && values.username
-                && values.email && emailValidation(values.email) && values.facebook && urlValidation(values.facebook) && values.phone
-                && values.fullName && values.bloodGroup && values.fatherPhone
-                && values.fatherOccupation && values.motherPhone && values.motherOccupation
-                && values.hscBatch && values.schoolName && values.collegeName
-            ) {
-                setSectionLoading(true)
-                axios.post(`${process.env.REACT_APP_API_DOMAIN}/student/signup`, values)
-                    .then(function (response) {
-                        setSectionLoading(false)
-                        alert(response.data.msg)
-                        history.push("/")
-                    })
-                    .catch(function (error) {
-                        setSectionLoading(false)
-                        // console.log(error);
-                        alert(error.response.data.msg)
-                    });
+            if (values.facebook[values.facebook.length - 1] === "/") {
+                values.facebook = values.facebook.substring(0, values.facebook.length - 1)
+            }
+            if (values.password === values.confirmPassword) {
+                if (values.username && values.email && emailValidation(values.email)
+                    && values.facebook && urlValidation(values.facebook) && values.phone
+                    && values.fullName && values.bloodGroup && values.fatherPhone
+                    && values.fatherOccupation && values.motherPhone && values.motherOccupation
+                    && values.hscBatch && values.schoolName && values.collegeName) {
+                    setSectionLoading(true)
+                    axios.post(`${process.env.REACT_APP_API_DOMAIN}/student/signup`, values)
+                        .then(function (response) {
+                            setSectionLoading(false)
+                            alert(response.data.msg)
+                            history.push("/")
+                        })
+                        .catch(function (error) {
+                            setSectionLoading(false)
+                            // console.log(error);
+                            alert(error.response.data.msg)
+                        });
+                } else {
+                    alert("Please Fill Up All Field")
+                }
             } else {
                 alert("Password Didn't Matched")
             }

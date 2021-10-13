@@ -32,6 +32,9 @@ function UpdateProfile() {
         },
 
         onSubmit: values => {
+            if (values.facebook[values.facebook.length - 1] === "/") {
+                values.facebook = values.facebook.substring(0, values.facebook.length - 1)
+            }
             if (values.username && values.email && emailValidation(values.email) && values.facebook && urlValidation(values.facebook) && values.phone
                 && values.fullName && values.bloodGroup && values.fatherPhone
                 && values.fatherOccupation && values.motherPhone && values.motherOccupation
