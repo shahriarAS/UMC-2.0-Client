@@ -60,14 +60,14 @@ function Courses() {
                                     </span>
                                     <p>{course.enrolledCount} Enrolled</p>
                                 </div>
-                                <div className="flex space-x-1 items-center">
+                                {/*  <div className="flex space-x-1 items-center">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                         </svg>
                                     </span>
                                     <p>Vanilla JS</p>
-                                </div>
+                                </div> */}
                                 <Link to={`/courses/view/${course._id}`}><button className="mt-4 text-xl w-full text-white bg-indigo-600 py-1.5 rounded-xl shadow-lg">Course Details</button></Link>
                             </div>
                         </div>
