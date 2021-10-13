@@ -31,6 +31,7 @@ function EnrollPayment() {
                 setSectionLoading(true)
                 axios.post(`${process.env.REACT_APP_API_DOMAIN}/order/create/`, {
                     ...values,
+                    payment_method: payment_method,
                     course: courseId,
                     student: UMCState.auth.userId
                 }, {
@@ -90,7 +91,9 @@ function EnrollPayment() {
                         <div className="flex mb-4">
                             <a className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1">Description</a>
                         </div>
-                        <p className="leading-relaxed mb-4 text-white">{ReactHtmlParser(Course.courseDetails)}</p>
+                        <p className="leading-relaxed mb-4 text-white">
+                            {ReactHtmlParser(Course.courseDetails)}
+                            </p>
                         <div className="flex border-t border-gray-800 py-2">
                             <span className="text-gray-500">Enrolled</span>
                             <span className="ml-auto text-white">{Course.enrolledCount}</span>

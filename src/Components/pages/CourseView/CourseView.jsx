@@ -56,7 +56,7 @@ function CourseView() {
                                 <a className="flex-grow text-indigo-200 border-b-2 border-indigo-500 py-2 text-lg px-1">Features</a>
                             </div>
                             <ul className="mb-4 list-disc pl-4">
-                                {Course.features && Course.features.map(feature => (
+                                {Course.features && Course.features.split("\n").map(feature => (
                                     <li className="text-white" key={Math.random()}>{feature}</li>
                                 ))}
                             </ul>
