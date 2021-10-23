@@ -22,6 +22,8 @@ import PasswordReset from './Components/pages/AuthPage/PasswordReset';
 import PasswordVerify from './Components/pages/AuthPage/AccountVerify';
 import AccountVerify from './Components/pages/AuthPage/AccountVerify';
 import ProfilePage from './Components/pages/ProfilePage/ProfilePage';
+import PDFPage from './Components/pages/PDFPage';
+import PDFCourse from './Components/pages/CoursePlayer/PDFCourse';
 // import dotenv from "dotenv"  
 
 function App() {
@@ -92,12 +94,14 @@ function App() {
           <Route path="/forgot" exact component={PasswordForgot} />
           <Route path="/courses" exact component={CoursePage} />
           <Route path="/courses/view/:courseId" exact component={CourseView} />
+          <Route path="/courses/view/:courseId/pdf" exact component={PDFCourse} />
           <Route path="/courses/enroll/:courseId" exact component={EnrollPayment} />
           <Route path="/courses/play/:courseId" exact component={CourseClass} />
           <Route path="/student/verify/:username/:randString" exact component={AccountVerify} />
           <Route path="/student/forgot/:username/" exact component={PasswordForgot} />
           <Route path="/student/reset/:username/:randString" exact component={PasswordReset} />
           <Route path="/profile/:username" exact component={ProfilePage} />
+          <Route path="/short-syllabus-pdf" exact component={PDFPage} />
 
           {/* Error Route */}
           <Route path="*" component={NotFound404} />

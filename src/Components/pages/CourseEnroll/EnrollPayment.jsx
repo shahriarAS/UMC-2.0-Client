@@ -41,7 +41,7 @@ function EnrollPayment() {
                 })
                     .then(function (response) {
                         setSectionLoading(false)
-                        alert("Your order has been placed successfully. Your order will approve withing 24 Hours.")
+                        alert("Your order has been placed successfully. Your order will approve within 24 Hours.")
                     })
                     .catch(function (error) {
                         setSectionLoading(false)
@@ -116,7 +116,7 @@ function EnrollPayment() {
                             <div className="mt-4">
                                 <label className=" block text-sm text-white" htmlFor="cus_email">Payment Method *</label>
                                 <select className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="payment_method" required aria-label="Payment Method" onChange={(e) => setPaymentMethod(e.target.value)} value={payment_method}>
-                                    <option values="">Select Payment Method</option>
+                                    <option key={Math.random()} values="">Select Payment Method</option>
                                     <option>bkash</option>
                                     <option>rocket</option>
                                     <option>nagad</option>
@@ -134,34 +134,34 @@ function EnrollPayment() {
                             <div className="mt-4">
                                 <label className=" block text-sm text-white" htmlFor="cus_email">Receiver Number *</label>
                                 <select className="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="receiver_number" required aria-label="Number You Sent Money" onChange={formik.handleChange} value={formik.values.receiver_number}>
-                                    <option value="">Select Receiver Number</option>
+                                    <option key={Math.random()} value="">Select Receiver Number</option>
                                     {
                                         payment_method == "bkash" ? (
                                             <>
-                                                <option value="01717722655">01717722655 (Agent Number)</option>
-                                                <option value="01774649518">01774649518 (Personal Number)</option>
+                                                <option key={Math.random()} value="01717722655">01717722655 (Agent Number)</option>
+                                                <option key={Math.random()} value="01774649518">01774649518 (Personal Number)</option>
                                             </>
                                         ) : payment_method == "rocket" ? (
                                             <>
-                                                <option value="01785001111">01785001111 (Personal Number)</option>
-                                                <option value="01711905962">01711905962 (Personal Number)</option>
+                                                <option key={Math.random()} value="01785001111">01785001111 (Personal Number)</option>
+                                                <option key={Math.random()} value="01711905962">01711905962 (Personal Number)</option>
                                             </>
                                         ) : payment_method == "nagad" ? (
                                             <>
-                                                <option value="01785001111">01785001111 (Personal Number)</option>
-                                                <option value="01711905962">01711905962 (Personal Number)</option>
-                                                <option value="01774649518">01774649518 (Personal Number)</option>
+                                                <option key={Math.random()} value="01785001111">01785001111 (Personal Number)</option>
+                                                <option key={Math.random()} value="01711905962">01711905962 (Personal Number)</option>
+                                                <option key={Math.random()} value="01774649518">01774649518 (Personal Number)</option>
                                             </>
 
                                         ) : (
                                                         <>
-                                                            <option value="01717722655">01717722655 (Agent Number)</option>
-                                                            <option value="01774649518">01774649518 (Personal Number)</option>
-                                                            <option value="01785001111">01785001111 (Personal Number)</option>
-                                                            <option value="01711905962">01711905962 (Personal Number)</option>
-                                                            <option value="01785001111">01785001111 (Personal Number)</option>
-                                                            <option value="01711905962">01711905962 (Personal Number)</option>
-                                                            <option value="01774649518">01774649518 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01717722655">01717722655 (Agent Number)</option>
+                                                            <option key={Math.random()} value="01774649518">01774649518 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01785001111">01785001111 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01711905962">01711905962 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01785001111">01785001111 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01711905962">01711905962 (Personal Number)</option>
+                                                            <option key={Math.random()} value="01774649518">01774649518 (Personal Number)</option>
                                                         </>
                                                     )
                                     }

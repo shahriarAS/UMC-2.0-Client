@@ -21,13 +21,13 @@ function HomeFeatures() {
                         </div>
                         <div className="flex-grow">
                             <h2 className="text-white text-lg title-font font-medium mb-3">Live Classes</h2>
-                            <p className="leading-relaxed text-base">
+                            <div className="leading-relaxed text-base">
                                 <ul>
                                     <li>3+ Live Classes Per Week</li>
                                     <li>Live Question - Answer Session</li>
                                     <li>In Class MCQ Exam</li>
                                 </ul>
-                            </p>
+                            </div>
                             {/* <a className="mt-3 text-indigo-400 inline-flex items-center">Learn More
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -45,7 +45,7 @@ function HomeFeatures() {
                         </div>
                         <div className="flex-grow">
                             <h2 className="text-white text-lg title-font font-medium mb-3">Regular Exam</h2>
-                            <p className="leading-relaxed text-base">
+                            <div className="leading-relaxed text-base">
                                 <ul>
                                     <li>Exam after completing every topic.</li>
                                     <li>Chapter Wise Exam</li>
@@ -54,7 +54,7 @@ function HomeFeatures() {
                                     <li>In time explanation in every question.</li>
                                     <li>Leaderboard and many more</li>
                                 </ul>
-                            </p>
+                            </div>
                             {/* <a className="mt-3 text-indigo-400 inline-flex items-center">Learn More
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -71,7 +71,7 @@ function HomeFeatures() {
                         </div>
                         <div className="flex-grow">
                             <h2 className="text-white text-lg title-font font-medium mb-3">Question Bank</h2>
-                            <p className="leading-relaxed text-base">
+                            <div className="leading-relaxed text-base">
                                 <ul>
                                     <li>Take Exam When You Want.</li>
                                     <li>Exam with standard question on any topic you like</li>
@@ -79,7 +79,7 @@ function HomeFeatures() {
                                     <li>Full Customize Question Bank</li>
                                     <li>Complete Mock Test</li>
                                 </ul>
-                            </p>
+                            </div>
                             {/* <a className="mt-3 text-indigo-400 inline-flex items-center">Learn More
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
