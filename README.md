@@ -2,6 +2,16 @@
 
 This is the client frontend part of **[UMC LMS](https://github.com/shahriar-programmer/umc-lms)** Webapp.
 
+* * *
+### Live Site:
+
+[Client Live Site Link](https://umc2frontend.netlify.app/)
+
+**Username:** `student`
+**Password:** `studentPa$$`
+
+* * *
+
 ### Frontend Challenges I Faced:
 - WYSIWYG editor for description field.
 - Making dashboard responsive.
